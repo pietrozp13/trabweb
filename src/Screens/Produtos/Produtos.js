@@ -6,7 +6,7 @@ import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 
-import { Container, Header } from './styles'
+import { Container, Header, ItensParaBaixa } from './styles'
 
 // Generate Order Data
 function createData(id, date, name, shipTo, paymentMethod, amount) {
@@ -31,7 +31,7 @@ export default function Produtos() {
   return (
     <React.Fragment>
       <Container>
-        <Table size="small">
+        <Table style={{ width: "70%", display: "table", "border-spacing": 0, "border-collapse": "collapse"}} size="small">
           <TableHead>
             <TableRow>
               <TableCell>Produtos</TableCell>
@@ -53,9 +53,11 @@ export default function Produtos() {
             ))}
           </TableBody>
         </Table>
-        <Header>
-          {produtos}
-        </Header>
+        {/* <Header>
+          {produtos.map(()=> {
+            <ItensParaBaixa>{produtos}</ItensParaBaixa>
+          })}
+        </Header> */}
       </Container>
     </React.Fragment>
   );

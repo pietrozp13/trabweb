@@ -22,9 +22,9 @@ export default function App() {
   return (
     <Router>
       <Header>
+        <Link to="/Produtos">Produtos</Link>
         <Link to="/Cadastro">Cadastro</Link>
         <Link to="/Login">Login</Link>
-        <Link to="/Produtos">Produtos</Link>
         <Link to="/Relatorio">Relatorio</Link>
       </Header>
       <div>
