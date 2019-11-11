@@ -12,3 +12,10 @@ export const Header = styled.div`
   display: flex;
   flex: 1;
 `;
+
+export const ItensParaBaixa = styled.div`
+  color: #fff;
+  background-color: #a8a8a8;
+  display: flex;
+  flex: 1;
+`;
