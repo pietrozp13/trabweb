@@ -13,7 +13,6 @@ import styled from 'styled-components';
 const Header = styled.div`
   padding: 20px;
   display: flex;
-  flex: 1;
   justify-content: space-evenly;
 `;
 
@@ -21,13 +20,13 @@ const Header = styled.div`
 export default function App() {
   return (
     <Router>
-      <Header>
-        <Link to="/Produtos">Produtos</Link>
-        <Link to="/Cadastro">Cadastro</Link>
-        <Link to="/Login">Login</Link>
-        <Link to="/Relatorio">Relatorio</Link>
-      </Header>
-      <div>
+      <div style={{ height: "100vh", display: "flex", flexDirection: "column" }}>
+        <Header>
+          <Link to="/Produtos">Produtos</Link>
+          <Link to="/Cadastro">Cadastro</Link>
+          <Link to="/Login">Login</Link>
+          <Link to="/Relatorio">Relatorio</Link>
+        </Header>
         <Switch>
           <Route path="/Cadastro">
             <Cadastro />
