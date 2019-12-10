@@ -7,25 +7,16 @@ import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 
+import IconButton from '@material-ui/core/IconButton';
+import { Check, Close } from '@material-ui/icons';
+
+
+
 import { Container, Header, ItensParaBaixa, ButtonsActionsContainer, TableContainer } from './styles'
 
 
 import axios from 'axios';
 
-
-
-// Generate Order Data
-function createData(id, date, name, shipTo, paymentMethod, amount) {
-  return { id, date, name, shipTo, paymentMethod, amount };
-}
-
-const rows = [
-  createData(0, 'Caneta', 'caixa com 100', 'R$ 5.50', 10, "⬇️"),
-  createData(1, 'Papel A4', 'caixa com 200', 'R$ 15.50', 1, "⬇️"),
-  createData(2, 'Post-it (S)', 'caixa com 50', 'R$ 20.50', 5, "⬇️"),
-  createData(3, 'Post-it (M)', 'caixa com 50', 'R$ 35.50', 7, "⬇️"),
-  createData(4, 'Post-it (L)', 'caixa com 50', 'R$ 4.50', 12, "⬇️"),
-];
 
 export default function Produtos() {
   const [produtos2, setProdutos2] = React.useState(null)
@@ -63,7 +54,7 @@ export default function Produtos() {
   }
 
   function confirmarSolicitacaoBaixa () {
-    
+    console.log("teste")
     // axios.post("httpURL")
     //   .then(res => {
     //     setProdutos2(res.data)
@@ -107,8 +98,12 @@ export default function Produtos() {
           ))
           }
           <ButtonsActionsContainer>
-            <Button variant="contained" color="secondary">Cancelar</Button>
-            <Button variant="contained" color="Primary">Salvar</Button>
+            <IconButton size="medium">
+              <Close htmlColor="red" />
+            </IconButton>
+            <IconButton size="medium" onClick={()=> confirmarSolicitacaoBaixa()}>
+              <Check htmlColor="green" />
+            </IconButton>
           </ButtonsActionsContainer>
         </Header>
       </Container>
