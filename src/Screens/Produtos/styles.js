@@ -28,4 +28,5 @@ export const ItensParaBaixa = styled.div`
 
 export const ButtonsActionsContainer = styled.div`
   display: flex;
+  justify-content: center;
 `;

@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 
 import Produtos from './Screens/Produtos/Produtos'
+import Cadastro from './Screens/Cadastro/Cadastro'
 
 import styled from 'styled-components';
 
@@ -18,15 +19,22 @@ const Header = styled.div`
 
 
 export default function App() {
+
+function headerLinks () {
+  return (
+    <Header>
+      <Link to="/Produtos">Produtos</Link>
+      <Link to="/Cadastro">Cadastro</Link>
+      <Link to="/Login">Login</Link>
+      <Link to="/Relatorio">Relatorio</Link>
+    </Header>
+  )
+}
+
+
   return (
     <Router>
       <div style={{ height: "100vh", display: "flex", flexDirection: "column" }}>
-        <Header>
-          <Link to="/Produtos">Produtos</Link>
-          <Link to="/Cadastro">Cadastro</Link>
-          <Link to="/Login">Login</Link>
-          <Link to="/Relatorio">Relatorio</Link>
-        </Header>
         <Switch>
           <Route path="/Cadastro">
             <Cadastro />
@@ -35,19 +43,17 @@ export default function App() {
             <Login />
           </Route>
           <Route path="/Produtos">
+            {headerLinks()}
             <Produtos />
           </Route>
           <Route path="/Relatorio">
+            {headerLinks()}
             <Relatorio />
           </Route>
         </Switch>
       </div>
     </Router>
   );
-}
-
-function Cadastro() {
-  return <h2>Cadastro</h2>;
 }
 
 function Login() {
