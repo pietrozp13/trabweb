@@ -25,9 +25,8 @@ function headerLinks () {
   return (
     <Header>
       <Link to="/Produtos">Produtos</Link>
-      <Link to="/Cadastro">Cadastro</Link>
-      <Link to="/Login">Login</Link>
       <Link to="/Relatorio">Relatorio</Link>
+      <Link to="/Login">Sair</Link>
     </Header>
   )
 }
