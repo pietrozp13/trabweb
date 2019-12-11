@@ -8,6 +8,7 @@ import {
 
 import Produtos from './Screens/Produtos/Produtos'
 import Cadastro from './Screens/Cadastro/Cadastro'
+import Relatorio from './Screens/Relatorio/Relatorio'
 
 import styled from 'styled-components';
 
@@ -58,12 +59,4 @@ function headerLinks () {
 
 function Login() {
   return <h2>Login</h2>;
-}
-
-// function Produtos() {
-//   return <h2>Produtos</h2>;
-// }
-
-function Relatorio() {
-  return <h2>Relatorio</h2>;
 }

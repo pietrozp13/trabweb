@@ -13,11 +13,13 @@ export default function ProgressMobileStepper() {
   const theme = useTheme();
   const [activeStep, setActiveStep] = React.useState(0);
   const [values, setValues] = React.useState({
-    amount: '',
+    login: '',
     password: '',
-    weight: '',
-    weightRange: '',
-    showPassword: false,
+    confPassword: '',
+    nome: '',
+    dataNascimento: new Date('2000-01-01T21:11:54'),
+    // idade: '',
+    sexo: 'F'
   });
 
   const handleNext = () => {
@@ -28,17 +30,16 @@ export default function ProgressMobileStepper() {
     setActiveStep(prevActiveStep => prevActiveStep - 1);
   };
 
-  const handleChange = prop => event => {
-    setValues({ ...values, [prop]: event.target.value });
+  const handleChange = (prop, newValue) => {
+    setValues({ ...values, [prop]: newValue });
   };
-
 
   function personalDataForm () {
     return (
-        <PersonalForm password={values.password} handleChange={handleChange}/>
+        <PersonalForm values={values} handleChange={handleChange}/>
     )
   }
-
+  console.log(values)
   return (
     <CadastroContainer>
         <CadastroContainerStyle >

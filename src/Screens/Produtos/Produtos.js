@@ -1,6 +1,4 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
@@ -12,7 +10,7 @@ import { Check, Close } from '@material-ui/icons';
 
 
 
-import { Container, Header, ItensParaBaixa, ButtonsActionsContainer, TableContainer } from './styles'
+import { Container, Header, ItensParaBaixa, ButtonsActionsContainer } from './styles'
 
 
 import axios from 'axios';
@@ -80,7 +78,7 @@ export default function Produtos() {
             {produtos2 ? (produtos2.map(row => (
               <TableRow key={row.id}>
                 <TableCell>{"#" + row.id + " " + row.produtos}</TableCell>
-                <TableCell><img width="64px" height="64px" src={row.img} /></TableCell>
+                <TableCell><img alt="Imagem produto" width="64px" height="64px" src={row.img} /></TableCell>
                 <TableCell>{row.medida}</TableCell>
                 <TableCell>{row.preco}</TableCell>
                 <TableCell>{row.quantDisponivel}</TableCell>
